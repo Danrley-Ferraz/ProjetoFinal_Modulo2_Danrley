@@ -2,8 +2,10 @@ import pygame
 
 from dino_runner.utils.constants import BG, ICON, SCREEN_HEIGHT, SCREEN_WIDTH, TITLE, FPS, DEFAULT_TYPE
 from dino_runner.components.dinosaur import Dinosaur
-from dino_runner.components.obstacles_manager import Obstacle_Manager
+from dino_runner.components.obstacles.obstacle_manager import ObstaclesManager
+from dino_runner.utils.text_utils import draw_message_component
 from dino_runner.components.powerups.power_up_manager import PowerUpManager
+
 
 
 
@@ -22,7 +24,7 @@ class Game:
         self.x_pos_bg = 0
         self.y_pos_bg = 380
         self.player = Dinosaur()
-        self.obstacle_manager = Obstacle_Manager()
+        self.obstacle_manager = ObstacleManager()
         self.power_up_manager = PowerUpManager
     
     def execute(self):
@@ -122,7 +124,6 @@ class Game:
         self.screen.fill((255, 255, 255))
         half_screen_height = SCREEN_HEIGHT // 2 
         half_screen_width = SCREEN_WIDTH // 2 
-        
         if self.death_count == 0:
             draw_message_component("Pressione qualquer tecla para iniciar", self.screen)
 
