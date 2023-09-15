@@ -9,11 +9,13 @@ class Obstacles(Sprite):
         self.type = type
         self.rect = self.image.get_rect()
 
+    def draw(self, screen):
+        screen.blit(self.image, self.rect)
+
 
     def update(self, game_speed, obstacles):        
         self.rect.x -= game_speed       
-        if self.rect.x < -self.rect.width:            
-            obstacles.remove(self)
+        if self.rect.x < -self.rect.width:
+            obstacles.pop()
             
-    def draw(self, screen):
-        screen.blit(self.image, self.rect)
+    
