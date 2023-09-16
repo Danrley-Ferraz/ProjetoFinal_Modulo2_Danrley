@@ -1,9 +1,9 @@
 import pygame 
 
-from dino_runner.utils.constants import BG, ICON, SCREEN_HEIGHT, SCREEN_WIDTH, TITLE, FPS, DEFAULT_TYPE
+from dino_runner.utils.constants import BG, ICON, SCREEN_HEIGHT, SCREEN_WIDTH, TITLE, FPS, DEFAULT_TYPE, MENU
 from dino_runner.components.powerups.dinosaur import Dinosaur
 from dino_runner.components.obstacles.obstacle_manager import ObstacleManager
-from dino_runner.utils.text_utils import draw_message_component
+from dino_runner.text_utils import draw_message_component
 from dino_runner.components.powerups.power_up_manager import PowerUpManager
 
 
@@ -80,7 +80,7 @@ class Game:
     
     def draw_background(self):
         image_width = BG.get_width()
-        self.screen.blit(BG, (self.x_pos_bg, self.y_pos_bg))
+        self.screen.blit(BG, (self.x_pos_bg, self.y_pos_bg - 380))
         self.screen.blit(BG, (image_width + self.x_pos_bg, self.y_pos_bg))
         if self.x_pos_bg <= - image_width:
             self.screen.blit(BG, (image_width + self.x_pos_bg, self.y_pos_bg))
@@ -118,6 +118,9 @@ class Game:
 
             elif event.type == pygame.KEYDOWN:
                 self.run()
+    
+    def show_main_menu(self):
+        self.screen.blit(MENU, (self.x_pos_bg, self.y_pos_bg - 380))
 
 
     def show_menu(self):
@@ -125,8 +128,9 @@ class Game:
         half_screen_height = SCREEN_HEIGHT // 2 
         half_screen_width = SCREEN_WIDTH // 2 
         if self.death_count == 0:
-            draw_message_component("Pressione qualquer tecla para iniciar", self.screen)
+            self.show_main_menu()
 
+            
         else:
             draw_message_component("Vishhh, você morreu ein?", self.screen, pos_y_center = half_screen_height - 150)
             draw_message_component("Pressione qualquer tecla para reiniciar", self.screen, pos_y_center = half_screen_height + 140)
