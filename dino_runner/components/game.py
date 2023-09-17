@@ -84,7 +84,7 @@ class Game:
         self.screen.blit(BG, (image_width + self.x_pos_bg, self.y_pos_bg))
         if self.x_pos_bg <= - image_width:
             self.screen.blit(BG, (image_width + self.x_pos_bg, self.y_pos_bg))
-            self.x_pos_bg = 0
+            self.x_pos_bg = 400
             self.x_pos_bg -= self.game_speed
 
     def draw_score(self):
