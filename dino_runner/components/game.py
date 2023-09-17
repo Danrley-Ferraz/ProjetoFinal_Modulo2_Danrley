@@ -8,7 +8,6 @@ from dino_runner.components.powerups.power_up_manager import PowerUpManager
 
 
 
-
 class Game:
     def __init__(self):
         pygame.init()

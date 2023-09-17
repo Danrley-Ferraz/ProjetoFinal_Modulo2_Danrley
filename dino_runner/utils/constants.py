@@ -14,8 +14,12 @@ ICON = pygame.image.load(os.path.join(IMG_DIR, "MilesWallpaper.png"))
 MENU = pygame.image.load(os.path.join(IMG_DIR, "MenuWallpaper.jpg"))
 
 RUNNING = [
-    pygame.image.load(os.path.join(IMG_DIR, "Dino/DinoRun1.png")),
-    pygame.image.load(os.path.join(IMG_DIR, "Dino/DinoRun2.png")),
+    pygame.image.load(os.path.join(IMG_DIR, "miles/correndo/correndo1.png")),
+    pygame.image.load(os.path.join(IMG_DIR, "miles/correndo/correndo2.png")),
+    pygame.image.load(os.path.join(IMG_DIR, "miles/correndo/correndo3.png")),
+    pygame.image.load(os.path.join(IMG_DIR, "miles/correndo/correndo4.png")),
+    pygame.image.load(os.path.join(IMG_DIR, "miles/correndo/correndo5.png")),
+    pygame.image.load(os.path.join(IMG_DIR, "miles/correndo/correndo6.png")),
 ]
 
 RUNNING_SHIELD = [
@@ -33,8 +37,9 @@ JUMPING_SHIELD = pygame.image.load(os.path.join(IMG_DIR, "Dino/DinoJumpShield.pn
 JUMPING_HAMMER = pygame.image.load(os.path.join(IMG_DIR, "Dino/DinoJumpHammer.png"))
 
 DUCKING = [
-    pygame.image.load(os.path.join(IMG_DIR, "Dino/DinoDuck1.png")),
-    pygame.image.load(os.path.join(IMG_DIR, "Dino/DinoDuck2.png")),
+    pygame.image.load(os.path.join(IMG_DIR, "miles/agachando/agachando2.png")),
+    pygame.image.load(os.path.join(IMG_DIR, "miles/agachando/agachando1.png")),
+
 ]
 
 DUCKING_SHIELD = [
@@ -59,18 +64,20 @@ LARGE_CACTUS = [
 ]
 
 BIRD = [
-    pygame.image.load(os.path.join(IMG_DIR, "Bird/Bird1.png")),
-    pygame.image.load(os.path.join(IMG_DIR, "Bird/Bird2.png")),
+    pygame.image.load(os.path.join(IMG_DIR, "miles/Norman/norman1.png")),
+    pygame.image.load(os.path.join(IMG_DIR, "miles/Norman/norman2.png")),
+    pygame.image.load(os.path.join(IMG_DIR, "miles/Norman/norman3.png")),
+
 ]
 
 CLOUD = pygame.image.load(os.path.join(IMG_DIR, 'Other/Cloud.png'))
 SHIELD = pygame.image.load(os.path.join(IMG_DIR, 'Other/shield.png'))
-
 HAMMER = pygame.image.load(os.path.join(IMG_DIR, 'Other/hammer.png'))
 
 BG = pygame.image.load(os.path.join(IMG_DIR, 'Other/background.png'))
 
 HEART = pygame.image.load(os.path.join(IMG_DIR, 'Other/SmallHeart.png'))
+
 
 DEFAULT_TYPE = "default"
 SHIELD_TYPE = "shield"
