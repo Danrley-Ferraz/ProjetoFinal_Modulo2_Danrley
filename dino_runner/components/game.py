@@ -1,10 +1,13 @@
 import pygame 
+import pygame.mixer
 
 from dino_runner.utils.constants import BG, ICON, SCREEN_HEIGHT, SCREEN_WIDTH, TITLE, FPS, DEFAULT_TYPE, MENU, GAMEOVER, SPIDERVERSE
 from dino_runner.components.powerups.dinosaur import Dinosaur
 from dino_runner.components.obstacles.obstacle_manager import ObstacleManager
 from dino_runner.text_utils import draw_message_component
 from dino_runner.components.powerups.power_up_manager import PowerUpManager
+from dino_runner.components.soundtrack import Music
+
 
 
 
@@ -28,6 +31,11 @@ class Game:
         self.fade_img = pygame.Surface((1100, 600)).convert_alpha()
         self.fade_img.fill("black")
         self.fade_alpha = 255
+        pygame.mixer.music.load("dino_runner/assets/Annihilate.mp3")
+        self.game_over_music = pygame.mixer.Sound("dino_runner/assets/canonico.mp3")
+        self.game_over_sound_played = False
+        self.game_over_music.set_volume(0.2)
+
 
     def execute(self):
         self.running = True
@@ -45,6 +53,8 @@ class Game:
         self.game_speed = 20
         self.score = 0 
         self.fade_alpha = 255
+        self.game_over_sound_played = False
+        pygame.mixer.music.play(-1) 
 
         while self.playing:
             self.events()
@@ -122,6 +132,8 @@ class Game:
 
             elif event.type == pygame.KEYDOWN:
                 self.run()
+                Music.play_music(self)
+
     
     def show_main_menu(self):
         self.screen.blit(MENU, (self.x_pos_bg, self.y_pos_bg - 380))
@@ -133,14 +145,22 @@ class Game:
         half_screen_width = SCREEN_WIDTH // 2 
         if self.death_count == 0:
             self.show_main_menu()
+            
 
             
         else:
+            pygame.mixer.music.stop()
             self.screen.blit(GAMEOVER, (self.x_pos_bg, self.y_pos_bg - 380))
+
+            if not self.game_over_sound_played:
+                self.game_over_music.play()
+                self.game_over_sound_played = True
+
+            
             self.fade_alpha -= 1
             self.fade_img.set_alpha(self.fade_alpha)
-
             self.screen.blit(self.fade_img, [0, 0])
+
             draw_message_component(
                f"{self.score}", self.screen, pos_x_center = 1030, pos_y_center = half_screen_height - 212)
 

@@ -15,6 +15,9 @@ MENU = pygame.image.load(os.path.join(IMG_DIR, "MenuWallpaper.jpg"))
 GAMEOVER = pygame.image.load(os.path.join(IMG_DIR, "gameover.jpg"))
 SPIDERVERSE = pygame.image.load(os.path.join(IMG_DIR, "spiderverse.jpg"))
 
+SOUND = os.path.join(IMG_DIR, "Annihilate.mp3")
+
+
 RUNNING = [
     pygame.image.load(os.path.join(IMG_DIR, "miles/correndo/correndo1.png")),
     pygame.image.load(os.path.join(IMG_DIR, "miles/correndo/correndo2.png")),
