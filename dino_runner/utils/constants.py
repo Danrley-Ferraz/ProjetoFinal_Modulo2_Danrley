@@ -12,6 +12,8 @@ IMG_DIR = os.path.join(os.path.dirname(__file__), "..", "assets")
 # Assets Constants
 ICON = pygame.image.load(os.path.join(IMG_DIR, "MilesWallpaper.png"))
 MENU = pygame.image.load(os.path.join(IMG_DIR, "MenuWallpaper.jpg"))
+GAMEOVER = pygame.image.load(os.path.join(IMG_DIR, "gameover.jpg"))
+SPIDERVERSE = pygame.image.load(os.path.join(IMG_DIR, "spiderverse.jpg"))
 
 RUNNING = [
     pygame.image.load(os.path.join(IMG_DIR, "miles/correndo/correndo1.png")),

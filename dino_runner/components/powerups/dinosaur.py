@@ -60,7 +60,7 @@ class Dinosaur(Sprite):
             self.step_index = 0
 
     def run(self):
-        self.image = RUN_IMG[self.type][self.step_index // 3]
+        self.image = RUN_IMG[self.type][self.step_index // 5]
         self.dino_rect = self.image.get_rect()
         self.dino_rect.x = X_POS - 10
         self.dino_rect.y = Y_POS + 165
