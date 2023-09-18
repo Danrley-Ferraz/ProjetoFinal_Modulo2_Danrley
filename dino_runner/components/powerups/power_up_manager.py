@@ -2,6 +2,7 @@ import random
 import pygame
 
 from dino_runner.components.powerups.shield import Shield 
+from dino_runner.utils.constants import SPIDERVERSE
 
 class PowerUpManager:
     def __init__(self):
@@ -12,7 +13,10 @@ class PowerUpManager:
         if len(self.power_ups) == 0 and self.when_appars == score:
             self.when_appars += random.randint(200, 300)
             self.power_ups.append(Shield())
-    
+
+
+
+
     def update(self, score, game_speed, player):
         self.generate_power_up(score)
         for power_up in self.power_ups:
