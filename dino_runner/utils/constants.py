@@ -14,7 +14,6 @@ ICON = pygame.image.load(os.path.join(IMG_DIR, "MilesWallpaper.png"))
 MENU = pygame.image.load(os.path.join(IMG_DIR, "MenuWallpaper.jpg"))
 GAMEOVER = pygame.image.load(os.path.join(IMG_DIR, "gameover.jpg"))
 SPIDERVERSE = pygame.image.load(os.path.join(IMG_DIR, "spiderverse.jpg"))
-
 SOUND = os.path.join(IMG_DIR, "Annihilate.mp3")
 
 
@@ -28,8 +27,12 @@ RUNNING = [
 ]
 
 RUNNING_SHIELD = [
-    pygame.image.load(os.path.join(IMG_DIR, "Dino/DinoRun1Shield.png")),
-    pygame.image.load(os.path.join(IMG_DIR, "Dino/DinoRun2.png")),
+    pygame.image.load(os.path.join(IMG_DIR, "miles/powerup/run1.png")),
+    pygame.image.load(os.path.join(IMG_DIR, "miles/powerup/run2.png")),
+    pygame.image.load(os.path.join(IMG_DIR, "miles/powerup/run3.png")),
+    pygame.image.load(os.path.join(IMG_DIR, "miles/powerup/run4.png")),
+    pygame.image.load(os.path.join(IMG_DIR, "miles/powerup/run5.png")),
+    pygame.image.load(os.path.join(IMG_DIR, "miles/powerup/run6.png")),
 ]
 
 RUNNING_HAMMER = [
@@ -39,7 +42,8 @@ RUNNING_HAMMER = [
 
 JUMPING = pygame.image.load(os.path.join(IMG_DIR, "miles/pulando/milespulando.png"))
 
-JUMPING_SHIELD = pygame.image.load(os.path.join(IMG_DIR, "Dino/DinoJumpShield.png"))
+
+JUMPING_SHIELD = pygame.image.load(os.path.join(IMG_DIR, "miles/powerup/jump.png"))
 JUMPING_HAMMER = pygame.image.load(os.path.join(IMG_DIR, "Dino/DinoJumpHammer.png"))
 
 DUCKING = [
@@ -49,8 +53,7 @@ DUCKING = [
 ]
 
 DUCKING_SHIELD = [
-    pygame.image.load(os.path.join(IMG_DIR, "Dino/DinoDuck1Shield.png")),
-    pygame.image.load(os.path.join(IMG_DIR, "Dino/DinoDuck2.png")),
+    pygame.image.load(os.path.join(IMG_DIR, "miles/powerup/duck.png")),
 ]
 
 DUCKING_HAMMER = [
@@ -59,14 +62,14 @@ DUCKING_HAMMER = [
 ]
 
 SMALL_CACTUS = [
-    pygame.image.load(os.path.join(IMG_DIR, "Cactus/SmallCactus1.png")),
-    pygame.image.load(os.path.join(IMG_DIR, "Cactus/SmallCactus2.png")),
-    pygame.image.load(os.path.join(IMG_DIR, "Cactus/SmallCactus3.png")),
+    pygame.image.load(os.path.join(IMG_DIR, "miles/venom/venom.png")),
+    pygame.image.load(os.path.join(IMG_DIR, "miles/Miguel/miguel2.png")),
+    pygame.image.load(os.path.join(IMG_DIR, "miles/carnificina/carnificina.png")),
 ]
 LARGE_CACTUS = [
-    pygame.image.load(os.path.join(IMG_DIR, "Cactus/LargeCactus1.png")),
-    pygame.image.load(os.path.join(IMG_DIR, "Cactus/LargeCactus2.png")),
-    pygame.image.load(os.path.join(IMG_DIR, "Cactus/LargeCactus3.png")),
+    pygame.image.load(os.path.join(IMG_DIR, "miles/lagarto/lagarto.png")),
+    pygame.image.load(os.path.join(IMG_DIR, "miles/Rhyno/rhyno.png")),
+    pygame.image.load(os.path.join(IMG_DIR, "miles/sandman/sandman.png")),
 ]
 
 BIRD = [
@@ -80,7 +83,7 @@ CLOUD = pygame.image.load(os.path.join(IMG_DIR, 'Other/Cloud.png'))
 SHIELD = pygame.image.load(os.path.join(IMG_DIR, 'Other/portal1.png'))
 HAMMER = pygame.image.load(os.path.join(IMG_DIR, 'Other/hammer.png'))
 
-BG = pygame.image.load(os.path.join(IMG_DIR, 'Other/background.png'))
+BG = pygame.image.load(os.path.join(IMG_DIR, 'Other/bkged.png'))
 
 HEART = pygame.image.load(os.path.join(IMG_DIR, 'Other/SmallHeart.png'))
 

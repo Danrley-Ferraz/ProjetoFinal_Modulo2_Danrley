@@ -22,7 +22,7 @@ class Game:
         self.running = False
         self.score = 0
         self.death_count = 0 
-        self.game_speed = 10
+        self.game_speed = 20
         self.x_pos_bg = 0
         self.y_pos_bg = 380
         self.player = Dinosaur()
@@ -112,7 +112,7 @@ class Game:
         if self.player.has_power_up:
             time_to_show = round((self.player.power_up_timing - pygame.time.get_ticks()) / 1000, 2)
             if time_to_show >= 0:
-                draw_message_component(f"{self.player.type.capitalize()} disponivel por {time_to_show:.0f}s", 
+                draw_message_component(f"{self.player.type.capitalize()} de Invisibilidade disponivel por {time_to_show:.0f}s", 
                     self.screen,
                     font_size = 18,
                     pos_x_center = 500,
