@@ -1,6 +1,7 @@
 import pygame 
 import pygame.mixer
 
+
 from dino_runner.utils.constants import BG, ICON, SCREEN_HEIGHT, SCREEN_WIDTH, TITLE, FPS, DEFAULT_TYPE, MENU, GAMEOVER, SPIDERVERSE
 from dino_runner.components.powerups.dinosaur import Dinosaur
 from dino_runner.components.obstacles.obstacle_manager import ObstacleManager
@@ -24,7 +25,7 @@ class Game:
         self.death_count = 0 
         self.game_speed = 20
         self.x_pos_bg = 0
-        self.y_pos_bg = 380
+        self.y_pos_bg = 0
         self.player = Dinosaur()
         self.obstacle_manager = ObstacleManager()
         self.power_up_manager = PowerUpManager()
@@ -92,13 +93,19 @@ class Game:
         pygame.display.flip()
     
     def draw_background(self):
-        image_width = BG.get_width()
-        self.screen.blit(BG, (self.x_pos_bg, self.y_pos_bg - 380))
-        self.screen.blit(BG, (image_width + self.x_pos_bg, self.y_pos_bg))
-        if self.x_pos_bg <= - image_width:
+
+         image_width = BG.get_width()
+         self.screen.blit(BG, (self.x_pos_bg, self.y_pos_bg))
+         self.screen.blit(BG, (image_width + self.x_pos_bg, self.y_pos_bg))
+
+         if self.x_pos_bg <= -image_width:
             self.screen.blit(BG, (image_width + self.x_pos_bg, self.y_pos_bg))
-            self.x_pos_bg = 400
-            self.x_pos_bg -= self.game_speed
+            self.x_pos_bg = 0
+         self.x_pos_bg -= self.game_speed
+        # if self.x_pos_bg <= - image_width:
+        #     self.screen.blit(BG, (image_width + self.x_pos_bg, self.y_pos_bg))
+        #     self.x_pos_bg = 400
+        # self.x_pos_bg -= self.game_speed
 
     def draw_score(self):
         draw_message_component(
@@ -134,8 +141,7 @@ class Game:
 
     
     def show_main_menu(self):
-        self.screen.blit(MENU, (self.x_pos_bg, self.y_pos_bg - 380))
-
+        self.screen.blit(MENU, (self.x_pos_bg, self.y_pos_bg))
 
     def show_menu(self):
         self.screen.fill((255, 255, 255))
@@ -145,10 +151,11 @@ class Game:
             self.show_main_menu()
             
 
-            
+      
         else:
             pygame.mixer.music.stop()
-            self.screen.blit(GAMEOVER, (self.x_pos_bg, self.y_pos_bg - 380))
+            # game_over = GAMEOVER.get_width()
+            self.screen.blit(GAMEOVER, (self.x_pos_bg == 500, self.y_pos_bg))
 
             if not self.game_over_sound_played:
                 self.game_over_music.play()
@@ -167,5 +174,5 @@ class Game:
             )
 
 
-        pygame.display.flip()
+        pygame.display.update()
         self.handle_events_on_menu()
